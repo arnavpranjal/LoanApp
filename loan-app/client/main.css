@@ -2,3 +2,39 @@ body {
   padding: 10px;
   font-family: sans-serif;
 }
+.login-container {
+  width: 300px; /* adjust as needed */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* optional: adds a shadow */
+  border-radius: 5px; /* optional: rounds the corners */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* space between elements */
+  align-items: center; /* centers the items horizontally */
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px; /* optional: rounds the corners */
+  border: 1px solid #ccc;
+}
+.centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Viewport Height */
+  margin: 0;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.login-container button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px; /* optional: rounds the corners */
+  cursor: pointer;
+  background-color: #007BFF; /* example color, you can change */
+  color: white;
+  transition: background-color 0.3s ease; /* optional: adds transition for hover effect */
+}
