@@ -38,3 +38,13 @@ body {
   color: white;
   transition: background-color 0.3s ease; /* optional: adds transition for hover effect */
 }
+.login-container select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px; /* optional: rounds the corners */
+  border: 1px solid #ccc;
+  background-color: #fff; /* to ensure a consistent background color */
+  font-family: sans-serif; /* if you want the font to match the surrounding text */
+  margin: 10px 0; /* optional: adds some vertical spacing */
+ 
+}
