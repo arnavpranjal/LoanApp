@@ -10,7 +10,8 @@ const Signup = () => {
   const handleSignup = () => {
 
     new SimpleSchema({
-      email: { type: String, regEx: SimpleSchema.RegEx.Email },
+ 
+      email: { type: String, regEx: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/ },
       password: String,
       role: { type: String, allowedValues: ['admin', 'borrower', 'lender'] }
     }).validate({ email, password, role });
@@ -20,6 +21,8 @@ const Signup = () => {
         alert('Signup Failed.');
       } else {
         // Redirect or do something on successful signup
+        alert('Successful')
+        console.log("succesful")
       }
     });
   };

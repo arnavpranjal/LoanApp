@@ -7,17 +7,40 @@ const Login = () => {
  
   let navigate = useNavigate();
  
+  // const handleLogin = () => {
+  //   Meteor.loginWithPassword(email, password, (err) => {
+  //     if (err) {
+  //       alert('Login Failed. Check your email and password.');
+  //     } else {
+  //       // Redirect or do something on successful login
+
+  //     }
+  //   });
+  // };
   const handleLogin = () => {
     Meteor.loginWithPassword(email, password, (err) => {
       if (err) {
+        console.error(err);
         alert('Login Failed. Check your email and password.');
       } else {
-        // Redirect or do something on successful login
-
+        const userRole = Meteor.user().profile.role;
+        switch(userRole) {
+          case 'admin':
+            navigate("/admin");
+            break;
+          case 'borrower':
+            navigate("/borrower");
+            break;
+          case 'lender':
+            navigate("/lender");
+            break;
+          default:
+            console.error("Invalid role or role not retrieved");
+        }
       }
     });
   };
-
+  
   return (
     <div class = "centering" >
     <div class="login-container">

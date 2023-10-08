@@ -48,3 +48,58 @@ body {
   margin: 10px 0; /* optional: adds some vertical spacing */
  
 }
+.borrower-dashboard {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid #e4e4e4;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.borrower-dashboard h2,
+.borrower-dashboard h3 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.borrower-dashboard ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.borrower-dashboard li {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.borrower-dashboard input[type="number"],
+.borrower-dashboard select,
+.borrower-dashboard button {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.borrower-dashboard button {
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+}
+
+.borrower-dashboard button:hover {
+  background-color: #45a049;
+}
