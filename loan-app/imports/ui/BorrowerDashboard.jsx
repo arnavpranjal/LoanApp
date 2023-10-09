@@ -70,7 +70,7 @@ const BorrowerDashboard = () => {
             <tr key={loan._id}>
                 <td>{loan.amount}</td>
                 <td>{loan.interestrate}</td>
-                <td style={{ color: loan.status === 'pending' ? 'red' : (loan.status === 'approved' ? 'green' : 'black') }}>
+                <td style={{ color: loan.status === 'pending' || loan.status === 'denied' ? 'red' : (loan.status === 'approved' ? 'green' : 'black') }}>
                     {loan.status}
                 </td>
                 <td>{loan.lender}</td>

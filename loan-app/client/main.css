@@ -156,3 +156,13 @@ body {
 .lender-dashboard .approve-button:hover {
   background-color: #45a049;
 }
+  
+.deny-button {
+  background-color: red;
+  color: white;
+  margin-left: 10px; /* spacing between the approve and deny buttons */
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

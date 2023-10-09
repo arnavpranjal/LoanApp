@@ -39,7 +39,7 @@ const Signup = () => {
         <option value="lender">Lender</option>
       </select>
       <button onClick={handleSignup}>Sign Up</button>
-      <button onClick={()=>navigate(-1)}>Go Back Home</button> 
+      <button onClick={()=>navigate(-1)}>Go Back </button> 
     </div>
     </div>
   );

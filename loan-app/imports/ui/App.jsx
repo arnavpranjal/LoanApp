@@ -4,6 +4,7 @@ import Login from './Login.jsx';
 import Signup from './Signup.jsx';
 import BorrowerDashboard from './BorrowerDashboard.jsx';
 import LenderDashboard from './LenderDashboard.jsx';
+import AdminDashboard from './AdminDashboard.jsx';
 export const App = () => (
   <Router>
   <Routes>
@@ -11,6 +12,7 @@ export const App = () => (
   <Route path="/signup" element={<Signup />} />
   <Route path="/borrower" element={<BorrowerDashboard />} />
   <Route path="/lender" element={<LenderDashboard />} />
+  <Route path="/admin" element={<AdminDashboard/>} />
   </Routes>
 </Router>
 

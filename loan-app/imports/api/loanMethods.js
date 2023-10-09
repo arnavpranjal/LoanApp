@@ -41,5 +41,24 @@ Meteor.methods({
     }
     // Update the loan status to 'approved'
     Loans.update(loanId, { $set: { status: 'approved' } });
+  } ,
+
+  'denyLoan': function(loanId) {
+    if (!this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
+    Loans.update(loanId, { $set: { status: 'denied' } });
+  } ,
+  'getAllLoans'() {
+    // Check if the user is an admin. This assumes you have some role-based logic implemented.
+    if (!this.userId) {
+      throw new Meteor.Error('not-authorized', 'Only admins can fetch all loans.');
+    }
+
+    // Fetch all loans from the Loans collection
+    const loans = Loans.find({}).fetch();
+
+    return loans;
+    
   }
 });

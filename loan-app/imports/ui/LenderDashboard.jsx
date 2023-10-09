@@ -28,27 +28,22 @@ const LenderDashboard = () => {
       }
     });
   };
+  const handleDenyLoan = (loanId) => {
+    Meteor.call('denyLoan', loanId, (error, result) => {
+      if (!error) {
+        // Update the loan status locally after denial
+        const updatedLoans = requestedLoans.map(loan => 
+          loan._id === loanId ? { ...loan, status: 'denied' } : loan
+        );
+        setRequestedLoans(updatedLoans);
+      } else {
+        console.error(error);
+      }
+    });
+  };
 
   return (
-    // <div className="lender-dashboard">
-    //   <h2>Requested Loans</h2>
-    //   <ul>
-    //     {requestedLoans.map(loan => (
-    //       <li key={loan._id}>
-    //         Amount: {loan.amount} - 
-    //        Borrower : {loan.borrower} -
-    //         <span style={{ color: loan.status === 'pending' ? 'red' : (loan.status === 'approved' ? 'green' : 'black') }}>
-    //           Status: {loan.status}
-    //         </span>
-    //         {loan.status === 'pending' && (
-    //           <button onClick={() => handleApproveLoan(loan._id)}>
-    //             Approve
-    //           </button>
-    //         )}
-    //       </li>
-    //     ))}
-    //   </ul>
-    // </div>
+  
     <div className="lender-dashboard">
     <h2>Requested Loans</h2>
     <table>
@@ -65,15 +60,20 @@ const LenderDashboard = () => {
                 <tr key={loan._id}>
                     <td>{loan.amount}</td>
                     <td>{loan.borrower}</td>
-                    <td style={{ color: loan.status === 'pending' ? 'red' : (loan.status === 'approved' ? 'green' : 'black') }}>
+                    <td style={{ color: loan.status === 'pending' || loan.status ==='denied' ? 'red' : (loan.status === 'approved' ? 'green' : 'black') }}>
                         {loan.status}
                     </td>
                     <td>
-                        {loan.status === 'pending' && (
-                            <button className="approve-button" onClick={() => handleApproveLoan(loan._id)}>
-                                Approve
-                            </button>
-                        )}
+                    {loan.status === 'pending' && (
+    <>
+      <button className="approve-button" onClick={() => handleApproveLoan(loan._id)}>
+        Approve
+      </button>
+      <button className="deny-button" onClick={() => handleDenyLoan(loan._id)}>
+        Deny
+      </button>
+    </>
+  )}
                     </td>
                 </tr>
             ))}
