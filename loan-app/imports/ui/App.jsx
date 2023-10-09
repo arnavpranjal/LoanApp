@@ -17,7 +17,5 @@ export const App = () => (
 </Router>
 
 
-/* <div>
-  <h1>Loan App</h1>
-</div> */
+
 );

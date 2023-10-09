@@ -3,9 +3,9 @@ import { Meteor } from 'meteor/meteor';
 
 const BorrowerDashboard = () => {
   const [loans, setLoans] = useState([]);
-  const [loanAmount, setLoanAmount] = useState('');  // Using a state for the loan amount
-  const [lenders, setLenders] = useState([]);  // State to hold the list of lenders
-  const [selectedLender, setSelectedLender] = useState('');  // State for the currently selected lender
+  const [loanAmount, setLoanAmount] = useState('');  
+  const [lenders, setLenders] = useState([]);  
+  const [selectedLender, setSelectedLender] = useState('');  
   useEffect(() => {
     Meteor.call('getMyLoans', (error, result) => {
       if (!error) {
@@ -31,7 +31,7 @@ const BorrowerDashboard = () => {
         if (!error) {
           alert('Loan request submitted!');
           setLoanAmount('');  // Reset the loan amount
-          // Here you can refresh the loans list or add the new loan to the list
+          
           setLoans([...loans, { amount, status: 'pending' ,lender : selectedLender}]);
         } else {
           console.error(error);
@@ -45,17 +45,7 @@ const BorrowerDashboard = () => {
   return (
     <div class="borrower-dashboard">
       <h2>My Loans</h2>
-      {/* <ul>
-        {loans.map(loan => (
-          <li key={loan._id}>
-            Amount: {loan.amount} - 
-            <span style={{ color: loan.status === 'pending' ? 'red' : (loan.status === 'approved' ? 'green' : 'black') }}>
-          Status: {loan.status}
-        </span> 
-            - lender :{loan.lender}
-          </li>
-        ))}
-      </ul> */}
+    
       <table>
     <thead>
         <tr>

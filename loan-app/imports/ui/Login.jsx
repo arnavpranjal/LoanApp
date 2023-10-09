@@ -7,16 +7,7 @@ const Login = () => {
  
   let navigate = useNavigate();
  
-  // const handleLogin = () => {
-  //   Meteor.loginWithPassword(email, password, (err) => {
-  //     if (err) {
-  //       alert('Login Failed. Check your email and password.');
-  //     } else {
-  //       // Redirect or do something on successful login
-
-  //     }
-  //   });
-  // };
+  
   const handleLogin = () => {
     Meteor.loginWithPassword(email, password, (err) => {
       if (err) {

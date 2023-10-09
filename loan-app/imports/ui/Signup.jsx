@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Meteor } from 'meteor/meteor';
+
 import SimpleSchema from 'simpl-schema';
 import { useNavigate } from 'react-router-dom';
 const Signup = () => {
@@ -20,7 +20,7 @@ const Signup = () => {
       if (err) {
         alert('Signup Failed.');
       } else {
-        // Redirect or do something on successful signup
+        
         alert('Successful')
         console.log("succesful")
       }

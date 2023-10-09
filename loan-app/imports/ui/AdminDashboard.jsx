@@ -5,7 +5,7 @@ const AdminDashboard = () => {
   const [allLoans, setAllLoans] = useState([]);
 
   useEffect(() => {
-    // Fetch all loans for admin review
+    
     Meteor.call('getAllLoans', (error, result) => {
       if (!error) {
         setAllLoans(result);

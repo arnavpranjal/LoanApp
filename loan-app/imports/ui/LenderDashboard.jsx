@@ -5,7 +5,7 @@ const LenderDashboard = () => {
   const [requestedLoans, setRequestedLoans] = useState([]);
 
   useEffect(() => {
-    // Fetch the loans where the current user is the lender
+    // Fetching the loans where the current user is the lender
     Meteor.call('getLoansForLender', Meteor.user().emails[0].address, (error, result) => {
       if (!error) {
         setRequestedLoans(result);
@@ -18,7 +18,7 @@ const LenderDashboard = () => {
   const handleApproveLoan = (loanId) => {
     Meteor.call('approveLoan', loanId, (error, result) => {
       if (!error) {
-        // Update the loan status locally after approval
+        // Updating the loan status locally after approval
         const updatedLoans = requestedLoans.map(loan => 
           loan._id === loanId ? { ...loan, status: 'approved' } : loan
         );
@@ -31,7 +31,7 @@ const LenderDashboard = () => {
   const handleDenyLoan = (loanId) => {
     Meteor.call('denyLoan', loanId, (error, result) => {
       if (!error) {
-        // Update the loan status locally after denial
+        // Updating the loan status locally after denial
         const updatedLoans = requestedLoans.map(loan => 
           loan._id === loanId ? { ...loan, status: 'denied' } : loan
         );

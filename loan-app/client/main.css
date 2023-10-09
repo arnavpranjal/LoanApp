@@ -5,25 +5,25 @@ body {
 .login-container {
   width: 300px; /* adjust as needed */
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* optional: adds a shadow */
-  border-radius: 5px; /* optional: rounds the corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 5px; 
   display: flex;
   flex-direction: column;
-  gap: 10px; /* space between elements */
-  align-items: center; /* centers the items horizontally */
+  gap: 10px; 
+  align-items: center; 
 }
 
 .login-container input {
   width: 100%;
   padding: 10px;
-  border-radius: 5px; /* optional: rounds the corners */
+  border-radius: 5px; 
   border: 1px solid #ccc;
 }
 .centering {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh; /* Viewport Height */
+  height: 80vh; 
   margin: 0;
   padding: 10px;
   font-family: sans-serif;
@@ -32,20 +32,20 @@ body {
 .login-container button {
   padding: 10px 15px;
   border: none;
-  border-radius: 5px; /* optional: rounds the corners */
+  border-radius: 5px; 
   cursor: pointer;
-  background-color: #007BFF; /* example color, you can change */
+  background-color: #007BFF; 
   color: white;
-  transition: background-color 0.3s ease; /* optional: adds transition for hover effect */
+  transition: background-color 0.3s ease; 
 }
 .login-container select {
   width: 100%;
   padding: 10px;
-  border-radius: 5px; /* optional: rounds the corners */
+  border-radius: 5px; 
   border: 1px solid #ccc;
-  background-color: #fff; /* to ensure a consistent background color */
-  font-family: sans-serif; /* if you want the font to match the surrounding text */
-  margin: 10px 0; /* optional: adds some vertical spacing */
+  background-color: #fff; 
+  font-family: sans-serif; 
+  margin: 10px 0; 
  
 }
 .borrower-dashboard {
@@ -160,7 +160,7 @@ body {
 .deny-button {
   background-color: red;
   color: white;
-  margin-left: 10px; /* spacing between the approve and deny buttons */
+  margin-left: 10px; 
   padding: 5px 10px;
   border: none;
   border-radius: 4px;
