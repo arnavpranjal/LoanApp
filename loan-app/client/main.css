@@ -51,7 +51,7 @@ body {
 .borrower-dashboard {
   padding: 20px;
   font-family: 'Arial', sans-serif;
-  max-width: 500px;
+  max-width: 800px;
   margin: 0 auto;
   border: 1px solid #e4e4e4;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -68,19 +68,24 @@ body {
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
-
-.borrower-dashboard ul {
-  list-style-type: none;
-  padding: 0;
+.borrower-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
 }
 
-.borrower-dashboard li {
-  padding: 10px;
-  border: 1px solid #ddd;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  background-color: #fff;
+.borrower-dashboard th, .borrower-dashboard td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
 }
+
+.borrower-dashboard th {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+
 
 .borrower-dashboard input[type="number"],
 .borrower-dashboard select,
@@ -101,5 +106,53 @@ body {
 }
 
 .borrower-dashboard button:hover {
+  background-color: #45a049;
+}
+.lender-dashboard {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #e4e4e4;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.lender-dashboard h2 {
+  font-size: 24px;
+  margin-bottom: 1em;
+  color: #333333;
+}
+
+.lender-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+.lender-dashboard th, .lender-dashboard td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.lender-dashboard th {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.lender-dashboard .approve-button {
+  padding: 0.5em 1em;
+  background-color: #4CAF50;
+  border: none;
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  
+}
+
+.lender-dashboard .approve-button:hover {
   background-color: #45a049;
 }

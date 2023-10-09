@@ -45,13 +45,46 @@ const BorrowerDashboard = () => {
   return (
     <div class="borrower-dashboard">
       <h2>My Loans</h2>
-      <ul>
+      {/* <ul>
         {loans.map(loan => (
           <li key={loan._id}>
-            Amount: {loan.amount} - Status: {loan.status} - lender :{loan.lender}
+            Amount: {loan.amount} - 
+            <span style={{ color: loan.status === 'pending' ? 'red' : (loan.status === 'approved' ? 'green' : 'black') }}>
+          Status: {loan.status}
+        </span> 
+            - lender :{loan.lender}
           </li>
         ))}
-      </ul>
+      </ul> */}
+      <table>
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>Interest Rate</th>
+            <th>Status</th>
+            <th>Lender</th>
+        </tr>
+    </thead>
+    <tbody>
+        {loans.map(loan => (
+            <tr key={loan._id}>
+                <td>{loan.amount}</td>
+                <td>{loan.interestrate}</td>
+                <td style={{ color: loan.status === 'pending' ? 'red' : (loan.status === 'approved' ? 'green' : 'black') }}>
+                    {loan.status}
+                </td>
+                <td>{loan.lender}</td>
+            </tr>
+        ))}
+    </tbody>
+</table>
+
+
+
+
+
+
+
        {/* Dropdown to select a lender */}
       
       <h3>Request New Loan</h3>

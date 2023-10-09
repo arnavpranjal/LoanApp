@@ -25,4 +25,21 @@ Meteor.methods({
       // ... add other necessary fields here
     });
   },
+  'getLoansForLender': function(lenderEmail) {
+    // Ensure the user is authenticated
+    if (!this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
+    // Fetch loans where the lender is the given lenderEmail
+    return Loans.find({ lender: lenderEmail }).fetch();
+  },
+  
+  'approveLoan': function(loanId) {
+    // Ensure the user is authenticated
+    if (!this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
+    // Update the loan status to 'approved'
+    Loans.update(loanId, { $set: { status: 'approved' } });
+  }
 });
