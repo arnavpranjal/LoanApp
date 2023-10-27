@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Meteor } from 'meteor/meteor';
+import React, { useState, useEffect } from "react";
+import { Meteor } from "meteor/meteor";
 
 const AdminDashboard = () => {
   const [allLoans, setAllLoans] = useState([]);
 
   useEffect(() => {
-    
-    Meteor.call('getAllLoans', (error, result) => {
+    Meteor.call("getAllLoans", (error, result) => {
       if (!error) {
         setAllLoans(result);
       } else {
@@ -24,18 +23,31 @@ const AdminDashboard = () => {
             <th>Borrower</th>
             <th>Lender</th>
             <th>Amount</th>
+            <th>Interest Rate</th>
             <th>Date of Request</th>
             <th>Status</th>
           </tr>
         </thead>
         <tbody>
-          {allLoans.map(loan => (
+          {allLoans.map((loan) => (
             <tr key={loan._id}>
               <td>{loan.borrower}</td>
               <td>{loan.lender}</td>
               <td>{loan.amount}</td>
+              <td>{loan.interestrate}%</td>
               <td>{new Date(loan.createdAt).toLocaleDateString()}</td>
-              <td style={{ color: loan.status === 'pending' ? 'yellow' : (loan.status === 'approved' ? 'green' : (loan.status === 'denied' ? 'red' : 'black')) }}>
+              <td
+                style={{
+                  color:
+                    loan.status === "pending"
+                      ? "yellow"
+                      : loan.status === "approved"
+                      ? "green"
+                      : loan.status === "denied"
+                      ? "red"
+                      : "black",
+                }}
+              >
                 {loan.status}
               </td>
             </tr>

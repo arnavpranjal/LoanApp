@@ -92,7 +92,7 @@ body {
   color: #333;
 }
 
-.borrower-dashboard input[type="number"],
+.borrower-dashboard input,
 .borrower-dashboard select,
 .borrower-dashboard button {
   padding: 10px;

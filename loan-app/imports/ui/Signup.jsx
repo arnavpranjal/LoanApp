@@ -23,6 +23,20 @@ const Signup = () => {
         console.error(err);
       } else {
         alert("Successful");
+        const userRole = Meteor.user().profile.role;
+        switch (userRole) {
+          case "admin":
+            navigate("/admin");
+            break;
+          case "borrower":
+            navigate("/borrower");
+            break;
+          case "lender":
+            navigate("/lender");
+            break;
+          default:
+            console.error("Invalid role or role not retrieved");
+        }
         console.log("succesful");
       }
     });
